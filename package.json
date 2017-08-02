@@ -1,0 +1,25 @@
+{
+  "name": "cvp-oamp-client",
+  "version": "0.1.0",
+  "description": "Client to interface with the Cisco CVP OAMP REST services and other OAMP-controlled services like the CVP diag page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ccondry/cvp-oamp-client.git"
+  },
+  "keywords": [
+    "cisco",
+    "cvp",
+    "oamp",
+    "cce"
+  ],
+  "author": "Coty Condry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ccondry/cvp-oamp-client/issues"
+  },
+  "homepage": "https://gitlab.com/ccondry/cvp-oamp-client#README"
+}
