@@ -16,10 +16,14 @@
     "oamp",
     "cce"
   ],
-  "author": "Coty Condry",
+  "author": "Coty Condry <ccondry@cisco.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://gitlab.com/ccondry/cvp-oamp-client/issues"
   },
-  "homepage": "https://gitlab.com/ccondry/cvp-oamp-client#README"
+  "homepage": "https://gitlab.com/ccondry/cvp-oamp-client#README",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "htmlparser2": "^3.9.2"
+  }
 }
