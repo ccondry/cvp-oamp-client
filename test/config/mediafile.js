@@ -5,17 +5,36 @@ const sleep = require('await-sleep')
 async function run () {
   try {
     // deploy media file
-    console.log(await config.mediafile.deploy('cvp1.dcloud.cisco.com', 'wsmadmin', 'C1sco1234567', fs.createReadStream('/temp/9002.wav'), 'en-us/app/LastAgent/', '9002.wav'))
+    await config.mediafile.deploy('cvp1.dcloud.cisco.com', 'wsmadmin', 'C1sco1234567', fs.createReadStream('/temp/9002.wav'), 'en-us/app/LastAgent/', '9002.wav')
+    console.log('media file deployed')
 
     // wait for media file to be fully deployed
     let created = false
     while(!created) {
-      await sleep(3000)
+      await sleep(1000)
       const media = await config.mediafile.get('cvp1.dcloud.cisco.com', 'wsmadmin', 'C1sco1234567', 'en-us/app/LastAgent/9002.wav')
+      console.log(`media file status = ${media.status}`)
       if (media.status === 'CREATED') {
         created = true
       }
     }
+    console.log('media file finised deploying')
+
+    // make sure the path has no leading or trailing slashes, or the request may fail
+    await config.mediafile.update('cvp1.dcloud.cisco.com', 'wsmadmin', 'C1sco1234567', fs.createReadStream('/temp/9002.wav'), 'en-us/app/LastAgent', '9002.wav')
+    console.log('media file updated')
+
+    // wait for media file to be fully updated
+    let updated = false
+    while(!updated) {
+      await sleep(1000)
+      const media = await config.mediafile.get('cvp1.dcloud.cisco.com', 'wsmadmin', 'C1sco1234567', 'en-us/app/LastAgent/9002.wav')
+      console.log(`media file status = ${media.status}`)
+      if (media.status === 'CREATED') {
+        updated = true
+      }
+    }
+    console.log('media file finised updating')
 
     // get media file content
     const content = await config.mediafile.getContent('cvp1.dcloud.cisco.com', 'wsmadmin', 'C1sco1234567', 'en-us/app/LastAgent/9002.wav')
