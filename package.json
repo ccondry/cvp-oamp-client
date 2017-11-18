@@ -4,7 +4,7 @@
   "description": "Client to interface with the Cisco CVP OAMP REST services and other OAMP-controlled services like the CVP diag page.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_TLS_REJECT_UNAUTHORIZED=0 node test"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,10 @@
   },
   "homepage": "https://gitlab.com/ccondry/cvp-oamp-client#README",
   "dependencies": {
+    "await-sleep": "0.0.1",
     "axios": "^0.16.2",
-    "htmlparser2": "^3.9.2"
+    "htmlparser2": "^3.9.2",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
   }
 }

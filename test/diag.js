@@ -1,4 +1,4 @@
-const diag = require('../diag')
+const diag = require('../lib/diag')
 
 diag.portState('cvp1')
 .then(response => {
