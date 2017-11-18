@@ -1,6 +1,6 @@
 {
   "name": "cvp-oamp-client",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Client to interface with the Cisco CVP OAMP REST services and other OAMP-controlled services like the CVP diag page.",
   "main": "index.js",
   "scripts": {
