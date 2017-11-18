@@ -22,7 +22,12 @@ async function run () {
     await config.vxmlapp.delete('cvp1.dcloud.cisco.com', 'wsmadmin', 'C1sco1234567', 'test9375')
     
     // list all apps
-    console.log(await config.vxmlapp.list('cvp1.dcloud.cisco.com', 'wsmadmin', 'C1sco1234567'))
+    console.log(await config.vxmlapp.list({
+      host: 'cvp1.dcloud.cisco.com',
+      user: 'wsmadmin',
+      pass: 'C1sco1234567',
+      q: 'appname:Ferguson'
+    }))
   } catch (e) {
     console.log(e)
   }
