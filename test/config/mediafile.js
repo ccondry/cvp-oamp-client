@@ -52,7 +52,7 @@ async function run () {
       q: 'filename:31ord.wav AND path:en-us/sys'
     }))
   } catch (e) {
-    console.log(e)
+    console.log(e.message)
   }
 }
 

@@ -29,7 +29,7 @@ async function run () {
       q: 'appname:Ferguson'
     }))
   } catch (e) {
-    console.log(e)
+    console.log(e.message)
   }
 }
 
