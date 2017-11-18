@@ -45,9 +45,14 @@ async function run () {
     console.log('media file deleted')
 
     // list all media files
-    console.log(await config.mediafile.list('cvp1.dcloud.cisco.com', 'wsmadmin', 'C1sco1234567'))
+    console.log(await config.mediafile.list({
+      host: 'cvp1.dcloud.cisco.com',
+      user: 'wsmadmin',
+      pass: 'C1sco1234567',
+      q: 'filename:31ord.wav AND path:en-us/sys'
+    }))
   } catch (e) {
-    console.log(e)
+    console.log(e.message)
   }
 }
 
